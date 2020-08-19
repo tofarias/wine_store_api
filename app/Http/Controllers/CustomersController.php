@@ -33,6 +33,14 @@ class CustomersController extends Controller
         echo json_encode( $customer ) ;
     }
 
+    public function getMostLoyalCustomers()
+    {
+        $customer = new Customer();
+        $data = $customer->getClientesMaisFieis();
+
+        echo json_encode( $data );
+    }
+
     public function getBiggestCustomerSinglePurchase()
     {
         $customer = new Customer();

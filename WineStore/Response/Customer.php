@@ -14,6 +14,65 @@ class Customer
         $this->customerRequest = new CustomerRequest();
     }
 
+    public function getClientesMaisFieis()
+    {
+        $historic = new PurchasesHistoricRequest();
+        $dataHistoric = $historic->find();
+
+        foreach ($dataHistoric as $key => $valueHistoric) {
+            // dd($valueHistoric);
+
+            $cpf = $valueHistoric['cliente'];
+            $count = 0;
+            foreach ($dataHistoric as $keyH => $valueHistoricH) {
+                // dd($valueHistoric);
+    
+                if( $cpf == $valueHistoricH['cliente'] ){
+                    $count += 1;
+                }
+            }
+
+            if( $count <= 1 ){
+                unset($dataHistoric[$key]);
+            }
+        }
+
+        //
+
+        foreach ($dataHistoric as $key => $valueHistoric) {
+            // dd($valueHistoric);
+
+            $cpf = $valueHistoric['cliente'];
+            $count = 0;
+            foreach ($dataHistoric as $keyH => $valueHistoricH) {
+                // dd($valueHistoric);
+    
+                if( $cpf == $valueHistoricH['cliente'] ){
+                    $count += 1;
+                }                
+            }
+
+            if( $count > 1 ){
+                unset($dataHistoric[$key]);
+            }
+        }
+        
+        //
+
+        $customers = $this->customerRequest->find();
+        $newCustomers = [];
+        foreach ($dataHistoric as $key => $valueHistoric) {
+            
+            foreach ($customers as $key => $customer) {
+                if( $valueHistoric['cliente'] == $customer['cpf'] ){
+                    $newCustomers[] = $customer;
+                }
+            }
+        }
+
+        return $newCustomers;
+    }
+
     public function getClienteComMaiorCompraUnicaNoUltimoAno2016()
     {
         $historic = new PurchasesHistoricRequest();

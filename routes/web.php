@@ -19,8 +19,9 @@ $router->group(['prefix' => 'clientes'], function () use ($router) {
 
     $router->get('/', ['uses' => 'CustomersController@index', 'as' => 'customer']);
     
-    $router->get('/listar-por-maior-valor-total-compras', ['uses' => 'CustomersController@getByMaxTotalValue', 'as' => 'customer']);
-    $router->get('/listar-cliente-com-maior-compra-unica-ultimo-ano-2016', ['uses' => 'CustomersController@getBiggestCustomerSinglePurchase', 'as' => 'customer']);
+    $router->get('/listar-por-maior-valor-total-compras', ['uses' => 'CustomersController@getByMaxTotalValue', 'as' => 'customer.getByMaxTotalValue']);
+    $router->get('/listar-cliente-com-maior-compra-unica-ultimo-ano-2016', ['uses' => 'CustomersController@getBiggestCustomerSinglePurchase', 'as' => 'customer.getBiggestCustomerSinglePurchase']);
+    $router->get('/listar-clientes-mais-fieis', ['uses' => 'CustomersController@getMostLoyalCustomers', 'as' => 'customer.getMostLoyalCustomers']);
     
     $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
 

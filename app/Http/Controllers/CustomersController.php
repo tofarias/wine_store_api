@@ -25,10 +25,10 @@ class CustomersController extends Controller
         echo json_encode( $customers->json() ) ;
     }
 
-    public function findById($id)
+    public function findById($userId=null)
     {
-        $customer = $this->customerRequest->find($id);
+        $customer = $this->customerRequest->find($userId);
 
-        echo json_encode( $customer ) ;
+        echo json_encode( $customer->json() ) ;
     }
 }

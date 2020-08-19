@@ -17,6 +17,11 @@ $router->get('/', function () use ($router) {
 
 $router->group(['prefix' => 'clientes'], function () use ($router) {
 
+    $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
     $router->get('/', ['uses' => 'CustomersController@index', 'as' => 'customer']);
-    $router->get('/{id}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
+
+    $router->group(['prefix' => 'hitorico'], function () use ($router) {
+        $router->get('/{historicId}', ['uses' => 'PurchasesHistoricController@findById', 'as' => 'purchases-historic']);
+    });
+
 });

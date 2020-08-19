@@ -5,20 +5,25 @@
 [![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
 [![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+# Venda de Vinhos
 
-## Official Documentation
+Desenvolvido com o Laravel Lumen.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+Essa API resolve os problemas:
 
-## Contributing
+#### 1 - Liste os clientes ordenados pelo maior valor total em compras.
+#### 2 - Mostre o cliente com maior compra única no último ano (2016).
+#### 3 - Liste os clientes mais fiéis.
+#### 4 - Recomende um vinho para um determinado cliente a partir do histórico
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Arquitetura
 
-## Security Vulnerabilities
+Foi desenvolvido no padrão REST o que permite facilitar a integração com outros sistemas e abstrai de forma intuitiva os endpoints que utilizam a API original.
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+As regras de negócio forma definidas de forma a ficar separdas do core do framework para diminuir o acoplamento e facilitar a implementação dos padrões SOLID facilitando a escalabilidade.
 
-## License
+As duas controllers principais: PurchasesHistoricController (histórico de compras) e CustomersController (clientes) foram implementadas seguindo o SRP (principio da responsabilidade única) controllers magras deixano a regra de negócio para a responsabilidade do domínio da aplicação no diretório "WineStore".
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Na pasta WineStore encontra-se classes CustomerRequest e PurchasesHistoricRequest responsáveis por fazer as requisições para os dois endpoins específicos.
+
+Existe um diretório "Response" com duas classes, essas responsáveis por implementar a resolução dos problemas de negócio e também responder em json.

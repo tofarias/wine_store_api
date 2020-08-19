@@ -18,7 +18,10 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'clientes'], function () use ($router) {
 
     $router->get('/', ['uses' => 'CustomersController@index', 'as' => 'customer']);
+    
     $router->get('/listar-por-maior-valor-total-compras', ['uses' => 'CustomersController@getByMaxTotalValue', 'as' => 'customer']);
+    $router->get('/listar-cliente-com-maior-compra-unica-ultimo-ano-2016', ['uses' => 'CustomersController@getBiggestCustomerSinglePurchase', 'as' => 'customer']);
+    
     $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
 
     $router->group(['prefix' => '{userId}/historico'], function () use ($router) {

@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
 [![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
 
-# Venda de Vinhos
+# API - Venda de Vinhos
 
 Desenvolvido com o Laravel Lumen.
 

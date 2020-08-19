@@ -2,7 +2,6 @@
 
 Desenvolvido com o Laravel Lumen.
 
-<<<<<<< HEAD
 Essa API resolve os problemas:
 
 #### 1 - Liste os clientes ordenados pelo maior valor total em compras.
@@ -21,7 +20,7 @@ As duas controllers principais: PurchasesHistoricController (histórico de compr
 Na pasta WineStore encontra-se classes CustomerRequest e PurchasesHistoricRequest responsáveis por fazer as requisições para os dois endpoins específicos.
 
 Existe um diretório "Response" com duas classes, essas responsáveis por implementar a resolução dos problemas de negócio e também responder em json.
-=======
+
 # API - Venda de Vinhos
 
 Desenvolvido com o Laravel Lumen.
@@ -44,4 +43,3 @@ As duas controllers principais: PurchasesHistoricController (histórico de compr
 Na pasta WineStore encontra-se classes CustomerRequest e PurchasesHistoricRequest responsáveis por fazer as requisições para os dois endpoins específicos.
 
 Existe um diretório "Response" com duas classes, essas responsáveis por implementar a resolução dos problemas de negócio e também responder em json.
->>>>>>> 3da432e982c198b6bffd5d61555aa1fd928d7637

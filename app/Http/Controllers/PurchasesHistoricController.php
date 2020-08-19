@@ -22,7 +22,7 @@ class PurchasesHistoricController extends Controller
     {
         $historic = $this->purchasesHistoricRequest->find();
         
-        echo json_encode( $historic->json() ) ;
+        echo json_encode( $historic ) ;
     }
 
     public function findById(int $userId=null)

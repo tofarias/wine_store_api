@@ -22,10 +22,10 @@ class CustomersController extends Controller
     {
         $customers = $this->customerRequest->find();
 
-        echo json_encode( $customers ) ;
+        echo json_encode( $customers->json() ) ;
     }
 
-    public function findById($userId=null)
+    public function findById(int $userId=null)
     {
         $customer = $this->customerRequest->find($userId);
 

@@ -20,15 +20,15 @@ class PurchasesHistoricController extends Controller
 
     public function index()
     {
-        $customers = $this->purchasesHistoricRequest->find();
-
-        echo json_encode( $customers ) ;
+        $historic = $this->purchasesHistoricRequest->find();
+        
+        echo json_encode( $historic->json() ) ;
     }
 
-    public function findById($userId=null)
+    public function findById(int $userId=null)
     {
-        $customer = $this->purchasesHistoricRequest->find($userId);
+        $historic = $this->purchasesHistoricRequest->find($userId);
 
-        echo json_encode( $customer ) ;
+        echo json_encode( $historic ) ;
     }
 }

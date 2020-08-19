@@ -17,8 +17,7 @@ class Customer
     public function listarClientesOrdenadosPeloMaiorValorTotalEmCompras()
     {
         $historic = new PurchasesHistoricRequest();
-        $historicResponse = $historic->find();
-        $dataHistoric = $historicResponse->json();
+        $dataHistoric = $historic->find();
 
         uasort($dataHistoric, function($a, $b){
             return $a['valorTotal'] < $b['valorTotal'];

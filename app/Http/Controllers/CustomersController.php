@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use WineStore\Request\CustomerRequest;
+use WineStore\Response\Customer;
 
 class CustomersController extends Controller
 {
@@ -22,7 +23,7 @@ class CustomersController extends Controller
     {
         $customers = $this->customerRequest->find();
 
-        echo json_encode( $customers->json() ) ;
+        echo json_encode( $customers->json() );
     }
 
     public function findById(int $userId=null)
@@ -30,5 +31,13 @@ class CustomersController extends Controller
         $customer = $this->customerRequest->find($userId);
 
         echo json_encode( $customer ) ;
+    }
+
+    public function getByMaxTotalValue()
+    {
+        $customer = new Customer();
+        $data = $customer->listarClientesOrdenadosPeloMaiorValorTotalEmCompras();
+
+        echo json_encode( $data );
     }
 }

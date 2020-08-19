@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'clientes'], function () use ($router) {
 
     $router->get('/', ['uses' => 'CustomersController@index', 'as' => 'customer']);
+    $router->get('/listar-por-maior-valor-total-compras', ['uses' => 'CustomersController@getByMaxTotalValue', 'as' => 'customer']);
     $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
 
     $router->group(['prefix' => '{userId}/historico'], function () use ($router) {
@@ -29,7 +30,7 @@ $router->group(['prefix' => 'clientes'], function () use ($router) {
 $router->group(['prefix' => 'historico'], function () use ($router) {
 
     $router->get('/', ['uses' => 'PurchasesHistoricController@index', 'as' => 'customer']);
-    // $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
+    $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
 
     // $router->group(['prefix' => '{userId}/historico'], function () use ($router) {
         // $router->get('/', ['uses' => 'PurchasesHistoricController@findById', 'as' => 'purchases-historic']);

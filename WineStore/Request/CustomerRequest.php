@@ -20,7 +20,7 @@ class CustomerRequest extends Http
                 if( $customer['id'] == $userId ){
                     
                     $customer['cpf'] = str_replace('-','.',$customer['cpf']);
-
+                    $customer['cpf'] = str_pad($customer['cpf'],15,'0',STR_PAD_LEFT);
                     return $customer;
                 }
             }

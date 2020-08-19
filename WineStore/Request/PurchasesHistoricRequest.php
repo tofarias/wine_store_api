@@ -20,8 +20,10 @@ class PurchasesHistoricRequest extends Http
             
             $response = [];
             foreach ($historicResponseJson as $key => $historicJson) {
-                
-                if( $historicJson['cliente'] == $customerResponse['cpf'] ){
+
+                $historicJson['cliente'] = str_pad($historicJson['cliente'],15,'0',STR_PAD_LEFT);
+
+                if( ($historicJson['cliente'] == $customerResponse['cpf']) ){
                     $response[] = $historicJson;
                 }
             }

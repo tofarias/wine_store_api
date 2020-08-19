@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "c30acc6a-1295-4114-9b38-001a7e9c1d00",
+		"name": "Wine Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Velasquez API",
+			"item": [
+				{
+					"name": "Histórico de Compras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://www.mocky.io/v2/598b16861100004905515ec7",
+							"protocol": "http",
+							"host": [
+								"www",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v2",
+								"598b16861100004905515ec7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro de Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://www.mocky.io/v2/598b16291100004705515ec5",
+							"protocol": "http",
+							"host": [
+								"www",
+								"mocky",
+								"io"
+							],
+							"path": [
+								"v2",
+								"598b16291100004705515ec5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Listar Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Cliente por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar histórico por cliente ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/1/historico/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"1",
+						"historico",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar histórico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/historico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"historico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#1 - listar-por-maior-valor-total-compras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/listar-por-maior-valor-total-compras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"listar-por-maior-valor-total-compras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#2 - listar-cliente-com-maior-compra-unica-ultimo-ano-2016",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/listar-cliente-com-maior-compra-unica-ultimo-ano-2016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"listar-cliente-com-maior-compra-unica-ultimo-ano-2016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "#3 - listar-clientes-mais-fieis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/listar-clientes-mais-fieis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"listar-clientes-mais-fieis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "# 4 - Recomende um vinho para um determinado cliente a partir do histórico de compras.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/clientes/1/recomendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"1",
+						"recomendar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "ca315549-a094-4a37-893e-0486e5c5a1f2",
+			"key": "localhost",
+			"value": "",
+			"disabled": true
+		}
+	],
+	"protocolProfileBehavior": {}
+}

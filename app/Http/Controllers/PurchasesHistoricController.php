@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use WineStore\Request\PurchasesHistoricRequest;
+use WineStore\Response\Historic;
 
 class PurchasesHistoricController extends Controller
 {
@@ -30,5 +31,13 @@ class PurchasesHistoricController extends Controller
         $historic = $this->purchasesHistoricRequest->find($userId);
 
         echo json_encode( $historic ) ;
+    }
+
+    public function recommend(int $userId=null)
+    {
+        $historic = new Historic();
+        $data = $historic->recomendarVinho($userId);
+
+        echo json_encode( $data );
     }
 }

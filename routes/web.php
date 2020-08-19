@@ -22,11 +22,16 @@ $router->group(['prefix' => 'clientes'], function () use ($router) {
     $router->get('/listar-por-maior-valor-total-compras', ['uses' => 'CustomersController@getByMaxTotalValue', 'as' => 'customer.getByMaxTotalValue']);
     $router->get('/listar-cliente-com-maior-compra-unica-ultimo-ano-2016', ['uses' => 'CustomersController@getBiggestCustomerSinglePurchase', 'as' => 'customer.getBiggestCustomerSinglePurchase']);
     $router->get('/listar-clientes-mais-fieis', ['uses' => 'CustomersController@getMostLoyalCustomers', 'as' => 'customer.getMostLoyalCustomers']);
+    $router->get('/listar-clientes-mais-fieis', ['uses' => 'CustomersController@getMostLoyalCustomers', 'as' => 'customer.getMostLoyalCustomers']);
     
     $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
 
     $router->group(['prefix' => '{userId}/historico'], function () use ($router) {
         $router->get('/', ['uses' => 'PurchasesHistoricController@findById', 'as' => 'purchases-historic']);
+    });
+
+    $router->group(['prefix' => '{userId}/recomendar'], function () use ($router) {
+        $router->get('/', ['uses' => 'PurchasesHistoricController@recommend', 'as' => 'purchases-historic.recommend']);
     });
 
 });
@@ -35,9 +40,4 @@ $router->group(['prefix' => 'historico'], function () use ($router) {
 
     $router->get('/', ['uses' => 'PurchasesHistoricController@index', 'as' => 'customer']);
     $router->get('/{userId}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
-
-    // $router->group(['prefix' => '{userId}/historico'], function () use ($router) {
-        // $router->get('/', ['uses' => 'PurchasesHistoricController@findById', 'as' => 'purchases-historic']);
-    // });
-
 });

@@ -18,6 +18,9 @@ class CustomerRequest extends Http
             foreach ($customers as $customer) {
 
                 if( $customer['id'] == $userId ){
+                    
+                    $customer['cpf'] = str_replace('-','.',$customer['cpf']);
+
                     return $customer;
                 }
             }

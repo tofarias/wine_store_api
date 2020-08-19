@@ -7,8 +7,10 @@ Essa API resolve os problemas:
 #### 1 - Liste os clientes ordenados pelo maior valor total em compras.
 #### 2 - Mostre o cliente com maior compra única no último ano (2016).
 #### 3 - Liste os clientes mais fiéis.
+  Foi considerado clientes que fizeram ao menos uma compra.
 #### 4 - Recomende um vinho para um determinado cliente a partir do histórico
-
+  Foi implementado para que seja recomendado aleatoriamente um dos vinhos já comprados anteriormente.
+  
 ## Arquitetura
 
 Foi desenvolvido no padrão REST o que permite facilitar a integração com outros sistemas e abstrai de forma intuitiva os endpoints que utilizam a API original.

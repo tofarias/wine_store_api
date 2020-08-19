@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'clientes'], function () use ($router) {
+
+    $router->get('/', ['uses' => 'CustomersController@index', 'as' => 'customer']);
+    $router->get('/{id}', ['uses' => 'CustomersController@findById', 'as' => 'customer']);
+});
